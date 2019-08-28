@@ -1,0 +1,538 @@
+EESchema Schematic File Version 4
+LIBS:ARVE-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Notes 7150 6950 0    177  ~ 0
+Jp Tan / Clarissa Magsipoc
+$Comp
+L RF_Module:ESP-12F U3
+U 1 1 5BBEDEBD
+P 5950 3850
+F 0 "U3" H 5650 4600 50  0000 C CNN
+F 1 "ESP-12F" H 6250 4600 50  0000 C CNN
+F 2 "RF_Module:ESP-12E" H 5950 3850 50  0001 C CNN
+F 3 "http://wiki.ai-thinker.com/_media/esp8266/esp8266_series_modules_user_manual_v1.1.pdf" H 5600 3950 50  0001 C CNN
+	1    5950 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR02
+U 1 1 5BD01345
+P 1850 6250
+F 0 "#PWR02" H 1850 6100 50  0001 C CNN
+F 1 "VCC" H 1868 6423 50  0000 C CNN
+F 2 "" H 1850 6250 50  0001 C CNN
+F 3 "" H 1850 6250 50  0001 C CNN
+	1    1850 6250
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 5BD01534
+P 3500 6250
+F 0 "#PWR06" H 3500 6000 50  0001 C CNN
+F 1 "GND" H 3505 6077 50  0000 C CNN
+F 2 "" H 3500 6250 50  0001 C CNN
+F 3 "" H 3500 6250 50  0001 C CNN
+	1    3500 6250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 5650 3500 5650
+Wire Wire Line
+	3350 5550 3500 5550
+Wire Wire Line
+	3500 5550 3500 5650
+Connection ~ 3500 5650
+Wire Wire Line
+	3350 5450 3500 5450
+Wire Wire Line
+	3500 5450 3500 5550
+Connection ~ 3500 5550
+$Comp
+L Device:CP C3
+U 1 1 5BD016D5
+P 2650 6150
+F 0 "C3" V 2500 6150 50  0000 C CNN
+F 1 "100nF" V 2814 6150 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2688 6000 50  0001 C CNN
+F 3 "~" H 2650 6150 50  0001 C CNN
+	1    2650 6150
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1850 6250 1850 6150
+Wire Wire Line
+	1850 6150 2500 6150
+Wire Wire Line
+	2800 6150 3500 6150
+Wire Wire Line
+	3500 6150 3500 6250
+Wire Wire Line
+	3500 5650 3500 6150
+Connection ~ 3500 6150
+Wire Wire Line
+	1850 6150 1850 5750
+Wire Wire Line
+	1850 5750 1950 5750
+Connection ~ 1850 6150
+Wire Wire Line
+	1950 5450 1850 5450
+Wire Wire Line
+	1850 5450 1850 5750
+Connection ~ 1850 5750
+$Comp
+L power:GND #PWR011
+U 1 1 5BD15BC0
+P 8450 1750
+F 0 "#PWR011" H 8450 1500 50  0001 C CNN
+F 1 "GND" H 8455 1577 50  0000 C CNN
+F 2 "" H 8450 1750 50  0001 C CNN
+F 3 "" H 8450 1750 50  0001 C CNN
+	1    8450 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8850 1450 8450 1450
+Wire Wire Line
+	8450 1450 8450 1650
+Text GLabel 7900 1350 0    50   Input ~ 0
+1.8V
+Wire Wire Line
+	8850 1650 8450 1650
+Connection ~ 8450 1650
+Wire Wire Line
+	8450 1650 8450 1750
+$Comp
+L power:GND #PWR014
+U 1 1 5BD160A1
+P 10650 1450
+F 0 "#PWR014" H 10650 1200 50  0001 C CNN
+F 1 "GND" H 10655 1277 50  0000 C CNN
+F 2 "" H 10650 1450 50  0001 C CNN
+F 3 "" H 10650 1450 50  0001 C CNN
+	1    10650 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10150 1550 10250 1550
+Wire Wire Line
+	10250 1550 10250 2150
+Wire Wire Line
+	10250 2150 8300 2150
+Wire Wire Line
+	8300 2150 8300 1350
+Wire Wire Line
+	8300 1350 8850 1350
+Connection ~ 8300 1350
+$Comp
+L Regulator_Linear:AMS1117-1.8 U2
+U 1 1 5BD17A4B
+P 2650 2950
+F 0 "U2" H 2650 3192 50  0000 C CNN
+F 1 "AMS1117-1.8" H 2650 3101 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223" H 2650 3150 50  0001 C CNN
+F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 2750 2700 50  0001 C CNN
+	1    2650 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Linear:AMS1117-3.3 U1
+U 1 1 5BD17AAF
+P 2650 1650
+F 0 "U1" H 2650 1892 50  0000 C CNN
+F 1 "AMS1117-3.3" H 2650 1801 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223" H 2650 1850 50  0001 C CNN
+F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 2750 1400 50  0001 C CNN
+	1    2650 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:USB_B_Micro J1
+U 1 1 5BD17B73
+P 1500 1850
+F 0 "J1" H 1555 2317 50  0000 C CNN
+F 1 "USB_B_Micro" H 1555 2226 50  0000 C CNN
+F 2 "Connector_USB:USB_Micro-B_Amphenol_10103594-0001LF_Horizontal" H 1650 1800 50  0001 C CNN
+F 3 "~" H 1650 1800 50  0001 C CNN
+	1    1500 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 5BD2B98A
+P 1450 2450
+F 0 "#PWR01" H 1450 2200 50  0001 C CNN
+F 1 "GND" H 1455 2277 50  0000 C CNN
+F 2 "" H 1450 2450 50  0001 C CNN
+F 3 "" H 1450 2450 50  0001 C CNN
+	1    1450 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 2250 1400 2350
+Wire Wire Line
+	1400 2350 1450 2350
+Wire Wire Line
+	1500 2350 1500 2250
+Wire Wire Line
+	1450 2350 1450 2450
+Connection ~ 1450 2350
+Wire Wire Line
+	1450 2350 1500 2350
+$Comp
+L power:GND #PWR03
+U 1 1 5BD2CE28
+P 2650 2250
+F 0 "#PWR03" H 2650 2000 50  0001 C CNN
+F 1 "GND" H 2655 2077 50  0000 C CNN
+F 2 "" H 2650 2250 50  0001 C CNN
+F 3 "" H 2650 2250 50  0001 C CNN
+	1    2650 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C1
+U 1 1 5BD2DF0F
+P 2250 1900
+F 0 "C1" H 2100 1900 50  0000 C CNN
+F 1 "100nF" H 2100 2050 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2288 1750 50  0001 C CNN
+F 3 "~" H 2250 1900 50  0001 C CNN
+	1    2250 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 1950 2650 2150
+Wire Wire Line
+	2650 2250 2650 2150
+Connection ~ 2650 2150
+$Comp
+L Device:CP C4
+U 1 1 5BD2FF85
+P 3100 1900
+F 0 "C4" H 2950 1900 50  0000 C CNN
+F 1 "100nF" H 3350 1900 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3138 1750 50  0001 C CNN
+F 3 "~" H 3100 1900 50  0001 C CNN
+	1    3100 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 1650 3100 1650
+Wire Wire Line
+	3100 1650 3100 1750
+Wire Wire Line
+	2650 2150 3100 2150
+Wire Wire Line
+	3100 2150 3100 2050
+Wire Wire Line
+	2250 1650 2250 1750
+Connection ~ 2250 1650
+Wire Wire Line
+	2250 1650 2350 1650
+Wire Wire Line
+	2250 2050 2250 2150
+Wire Wire Line
+	2250 2150 2650 2150
+Wire Wire Line
+	1950 1650 2250 1650
+Wire Wire Line
+	1800 1650 1950 1650
+Connection ~ 1950 1650
+$Comp
+L power:GND #PWR04
+U 1 1 5BD36769
+P 2650 3550
+F 0 "#PWR04" H 2650 3300 50  0001 C CNN
+F 1 "GND" H 2655 3377 50  0000 C CNN
+F 2 "" H 2650 3550 50  0001 C CNN
+F 3 "" H 2650 3550 50  0001 C CNN
+	1    2650 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C2
+U 1 1 5BD3676F
+P 2250 3200
+F 0 "C2" H 2100 3200 50  0000 C CNN
+F 1 "100nF" H 2100 3350 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2288 3050 50  0001 C CNN
+F 3 "~" H 2250 3200 50  0001 C CNN
+	1    2250 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 3250 2650 3450
+Wire Wire Line
+	2650 3550 2650 3450
+Connection ~ 2650 3450
+$Comp
+L Device:CP C5
+U 1 1 5BD36779
+P 3100 3200
+F 0 "C5" H 2950 3200 50  0000 C CNN
+F 1 "100nF" H 3350 3200 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3138 3050 50  0001 C CNN
+F 3 "~" H 3100 3200 50  0001 C CNN
+	1    3100 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 2950 3100 2950
+Wire Wire Line
+	3100 2950 3100 3050
+Wire Wire Line
+	2650 3450 3100 3450
+Wire Wire Line
+	3100 3450 3100 3350
+Wire Wire Line
+	2250 2950 2250 3050
+Connection ~ 2250 2950
+Wire Wire Line
+	2250 2950 2350 2950
+Wire Wire Line
+	2250 3350 2250 3450
+Wire Wire Line
+	2250 3450 2650 3450
+Wire Wire Line
+	1950 2950 2250 2950
+Wire Wire Line
+	1950 1650 1950 2950
+Text Notes 1500 1250 0    98   ~ 0
+Power Delivery
+$Comp
+L power:VCC #PWR08
+U 1 1 5BD3DDBA
+P 5950 2850
+F 0 "#PWR08" H 5950 2700 50  0001 C CNN
+F 1 "VCC" H 5967 3023 50  0000 C CNN
+F 2 "" H 5950 2850 50  0001 C CNN
+F 3 "" H 5950 2850 50  0001 C CNN
+	1    5950 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 2850 5950 2950
+Text GLabel 3500 2950 2    50   Input ~ 0
+1.8V
+Wire Wire Line
+	3100 2950 3500 2950
+Connection ~ 3100 2950
+$Comp
+L power:VCC #PWR05
+U 1 1 5BD401C8
+P 3500 1650
+F 0 "#PWR05" H 3500 1500 50  0001 C CNN
+F 1 "VCC" V 3517 1778 50  0000 L CNN
+F 2 "" H 3500 1650 50  0001 C CNN
+F 3 "" H 3500 1650 50  0001 C CNN
+	1    3500 1650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3100 1650 3500 1650
+Connection ~ 3100 1650
+Text Notes 1800 5000 0    98   ~ 0
+Temperature and Humidity
+Text Notes 9000 950  0    98   ~ 0
+VOC and CO2 
+Wire Wire Line
+	5350 3450 5250 3450
+Wire Wire Line
+	5250 3450 5250 2950
+Wire Wire Line
+	5250 2950 5950 2950
+Connection ~ 5950 2950
+Wire Wire Line
+	5950 2950 5950 3050
+$Comp
+L power:GND #PWR09
+U 1 1 5BD44704
+P 5950 4750
+F 0 "#PWR09" H 5950 4500 50  0001 C CNN
+F 1 "GND" H 5955 4577 50  0000 C CNN
+F 2 "" H 5950 4750 50  0001 C CNN
+F 3 "" H 5950 4750 50  0001 C CNN
+	1    5950 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 4550 5950 4650
+Wire Wire Line
+	6550 3250 6700 3250
+Wire Wire Line
+	6700 3250 6700 2950
+Wire Wire Line
+	6700 2950 5950 2950
+Wire Wire Line
+	5950 4650 6700 4650
+Wire Wire Line
+	6700 4650 6700 4150
+Wire Wire Line
+	6700 4150 6550 4150
+Connection ~ 5950 4650
+Wire Wire Line
+	5950 4650 5950 4750
+Text GLabel 6700 3650 2    50   Input ~ 0
+SCK
+Text GLabel 6700 3750 2    50   Input ~ 0
+SDA
+Wire Wire Line
+	6550 3650 6700 3650
+Wire Wire Line
+	6550 3750 6700 3750
+Text GLabel 1700 5650 0    50   Input ~ 0
+SCK
+Text GLabel 1700 5350 0    50   Input ~ 0
+SDA
+Wire Wire Line
+	1700 5350 1950 5350
+Wire Wire Line
+	1700 5650 1950 5650
+Text GLabel 8700 1550 0    50   Input ~ 0
+SDA
+Wire Wire Line
+	8700 1550 8850 1550
+Text GLabel 10300 1450 2    50   Input ~ 0
+SCK
+Wire Wire Line
+	10150 1450 10300 1450
+Wire Wire Line
+	10150 1350 10650 1350
+Wire Wire Line
+	10650 1350 10650 1450
+Wire Wire Line
+	6550 3450 6700 3450
+Wire Wire Line
+	6700 3450 6700 3250
+Connection ~ 6700 3250
+$Comp
+L Connector:Conn_01x08_Female J2
+U 1 1 5BD58BC7
+P 9350 5100
+F 0 "J2" H 9378 5076 50  0000 L CNN
+F 1 "PMS5003" H 9378 4985 50  0000 L CNN
+F 2 "Connector_Hirose:Hirose_DF13-08P-1.25DSA_1x08_P1.25mm_Vertical" H 9350 5100 50  0001 C CNN
+F 3 "~" H 9350 5100 50  0001 C CNN
+	1    9350 5100
+	1    0    0    -1  
+$EndComp
+Text GLabel 9000 4800 0    50   Input ~ 0
+N.C.
+Wire Wire Line
+	9000 4800 9150 4800
+Text GLabel 9000 4900 0    50   Input ~ 0
+N.C.
+Wire Wire Line
+	9000 4900 9150 4900
+Text GLabel 9000 5000 0    50   Input ~ 0
+RST
+Wire Wire Line
+	9000 5000 9150 5000
+Text GLabel 9000 5100 0    50   Input ~ 0
+TXD
+Text GLabel 9000 5200 0    50   Input ~ 0
+RXD
+Wire Wire Line
+	9000 5100 9150 5100
+Wire Wire Line
+	9000 5200 9150 5200
+Text GLabel 9000 5300 0    50   Input ~ 0
+SET
+Wire Wire Line
+	9000 5300 9150 5300
+$Comp
+L power:GND #PWR012
+U 1 1 5BD6861C
+P 8650 5500
+F 0 "#PWR012" H 8650 5250 50  0001 C CNN
+F 1 "GND" H 8655 5327 50  0000 C CNN
+F 2 "" H 8650 5500 50  0001 C CNN
+F 3 "" H 8650 5500 50  0001 C CNN
+	1    8650 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR013
+U 1 1 5BD6A905
+P 9050 5500
+F 0 "#PWR013" H 9050 5350 50  0001 C CNN
+F 1 "VCC" V 9068 5627 50  0000 L CNN
+F 2 "" H 9050 5500 50  0001 C CNN
+F 3 "" H 9050 5500 50  0001 C CNN
+	1    9050 5500
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8650 5500 8650 5400
+Wire Wire Line
+	8650 5400 9150 5400
+Wire Wire Line
+	9050 5500 9150 5500
+Text GLabel 6700 3550 2    50   Input ~ 0
+TXD
+Text Notes 8700 4650 0    98   ~ 0
+PM Sensor\n
+Text Notes 7350 7500 0    50   ~ 0
+Project Canary
+Wire Wire Line
+	3350 5350 3500 5350
+Wire Wire Line
+	3500 5350 3500 5450
+Connection ~ 3500 5450
+Wire Wire Line
+	6550 3550 6700 3550
+$Comp
+L SHT30-DIS-B:SHT30-DIS-B IC1
+U 1 1 5D666306
+P 1950 5350
+F 0 "IC1" H 2650 5617 50  0000 C CNN
+F 1 "SHT30-DIS-B" H 2650 5526 50  0000 C CNN
+F 2 "SHT30-DIS-B:SON50P250X250X100-9N" H 2650 4700 50  0001 C CNN
+F 3 "https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf" H 2650 4600 50  0001 C CNN
+F 4 "Board Mount Humidity Sensors RH Accuracy +/- 3% Digital, DFN Type" H 2650 4500 50  0001 C CNN "Description"
+F 5 "RS" H 2650 4400 50  0001 C CNN "Supplier_Name"
+F 6 "" H 2650 4300 50  0001 C CNN "RS Part Number"
+F 7 "Sensirion" H 2650 4200 50  0001 C CNN "Manufacturer_Name"
+F 8 "SHT30-DIS-B" H 2650 4100 50  0001 C CNN "Manufacturer_Part_Number"
+F 9 "" H 2650 4000 50  0001 C CNN "Allied_Number"
+F 10 "" H 2650 3900 50  0001 C CNN "Other Part Number"
+F 11 "1" H 3200 3800 50  0001 C CNN "Height"
+	1    1950 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L SGP30-2.5k:SGP30-2.5k IC2
+U 1 1 5D66815F
+P 8850 1350
+F 0 "IC2" H 9500 1617 50  0000 C CNN
+F 1 "SGP30-2.5k" H 9500 1526 50  0000 C CNN
+F 2 "SGP30-2.5k:SON80P245X245X90-7N" H 9500 800 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/682/Sensirion_Gas_Sensors_SGP30_Preliminary_Datasheet-1128067.pdf" H 9500 700 50  0001 C CNN
+F 4 "Air Quality Sensors Multi-Pixel SGP Gas Sensor" H 9500 600 50  0001 C CNN "Description"
+F 5 "RS" H 9500 500 50  0001 C CNN "Supplier_Name"
+F 6 "" H 9500 400 50  0001 C CNN "RS Part Number"
+F 7 "Sensirion" H 9500 300 50  0001 C CNN "Manufacturer_Name"
+F 8 "SGP30-2.5k" H 9500 200 50  0001 C CNN "Manufacturer_Part_Number"
+F 9 "" H 9500 100 50  0001 C CNN "Allied_Number"
+F 10 "" H 9500 0   50  0001 C CNN "Other Part Number"
+F 11 "0.9" H 10000 -100 50  0001 C CNN "Height"
+	1    8850 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 1350 8300 1350
+$EndSCHEMATC
